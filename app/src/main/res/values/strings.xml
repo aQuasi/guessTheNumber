@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Guess</string>
+    <string name="welcome">WELCOME :)</string>
+    <string name="welcome_game_description">This game generates a random number.
+        It is up to you to guess the correct number that has already been generated.
+        Do you have what it takes to guess the number correctly before you run out of attempts?</string>
+    <string name="yes">YES</string>
+    <string name="no">NO</string>
+    <string name="instruct">Enter a number between 1 and 100:</string>
+    <string name="userInput">Number goes here</string>
+    <string name="guess">GUESS</string>
+    <string name="instruct1">Click "GUESS" after you enter your number</string>
+</resources>
