@@ -16,19 +16,22 @@ public class GameStartActivity extends AppCompatActivity {
 
     private int randomNumber;
 
+    private int attemptsLeft = 6;
+
     public void checkTheUserInput() {
         String usersNumber = userIn.getText().toString();
         String message;
 
         try {
             int theNumber = Integer.parseInt(usersNumber);
+            attemptsLeft--;
 
             if (theNumber > randomNumber) {
-                message = "too high";
+                message = "too high. You have " + attemptsLeft + " attempts left.";
                 output.setText(message);
             }
             else if (theNumber < randomNumber) {
-                message = "too low";
+                message = "too low. You have " + attemptsLeft + " attempts left.";
                 output.setText(message);
             }
             else {
@@ -51,7 +54,9 @@ public class GameStartActivity extends AppCompatActivity {
     }
 
     private void generateNewGame() {
+
         randomNumber = (int) (Math.random() * 100 + 1);
+        attemptsLeft = 6;
     }
 
     @Override
