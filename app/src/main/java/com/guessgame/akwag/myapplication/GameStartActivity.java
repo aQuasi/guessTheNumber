@@ -1,5 +1,6 @@
 package com.guessgame.akwag.myapplication;
 
+import android.content.DialogInterface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.KeyEvent;
@@ -7,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.app.AlertDialog;
 
 public class GameStartActivity extends AppCompatActivity {
 
@@ -27,34 +29,60 @@ public class GameStartActivity extends AppCompatActivity {
             attemptsLeft--;
 
             if (theNumber > randomNumber) {
-                message = "too high. You have " + attemptsLeft + " attempts left.";
+                message = theNumber + " is too high. You have " + attemptsLeft + " attempts left.";
                 output.setText(message);
-            }
-            else if (theNumber < randomNumber) {
-                message = "too low. You have " + attemptsLeft + " attempts left.";
+
+            } else if (theNumber < randomNumber) {
+                message = theNumber + " is too low. You have " + attemptsLeft + " attempts left.";
                 output.setText(message);
-            }
-            else {
-                message = theNumber + " is correct. WINNER! Play Again!";
-                output.setText(message);
-                generateNewGame();
+
+            } else if (theNumber == randomNumber) {
+                new AlertDialog.Builder(GameStartActivity.this)
+                        .setMessage("WINNER! " + theNumber + " is correct. Do you want to play again?")
+                        .setCancelable(false)
+                        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                userIn.setText("");
+                                generateNewGame();
+                            }
+                        })
+                        .setNegativeButton("No", null)
+                        .show();
             }
 
             if (attemptsLeft <= 0) {
-                message = "You run out of attempts! \n" +
-                        "The correct number was : " + randomNumber;
-                output.setText(message);
+                askToPlayAgain();
             }
-        }
-        catch (Exception e) {
-            message = "real numbers only";
+
+        } catch (Exception e) {
+            message = "Enter a real number please.";
             output.setText(message);
-        }
-        finally {
+
+        } finally {
             //Refocuses and selects all text so user doesn't have to clear them one by one
             userIn.requestFocus();
             userIn.selectAll();
         }
+    }
+
+    //Alert Dialogue
+    public void askToPlayAgain() {
+        new AlertDialog.Builder(GameStartActivity.this)
+                .setMessage("Sorry, out of attempts! Do you want to try again?")
+                .setCancelable(false)
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        userIn.setText("");
+                        generateNewGame();
+                    }
+                })
+                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        finish();
+                        System.exit(0);
+                    }
+                })
+                .show();
     }
 
     private void generateNewGame() {
