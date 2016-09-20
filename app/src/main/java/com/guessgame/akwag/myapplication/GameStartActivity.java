@@ -39,22 +39,25 @@ public class GameStartActivity extends AppCompatActivity {
                 output.setText(message);
                 generateNewGame();
             }
+
+            if (attemptsLeft <= 0) {
+                message = "You run out of attempts! \n" +
+                        "The correct number was : " + randomNumber;
+                output.setText(message);
+            }
         }
         catch (Exception e) {
             message = "real numbers only";
             output.setText(message);
-
         }
         finally {
             //Refocuses and selects all text so user doesn't have to clear them one by one
             userIn.requestFocus();
             userIn.selectAll();
-
         }
     }
 
     private void generateNewGame() {
-
         randomNumber = (int) (Math.random() * 100 + 1);
         attemptsLeft = 6;
     }
