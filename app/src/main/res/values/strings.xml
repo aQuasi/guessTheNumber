@@ -5,7 +5,7 @@
         Can you guess the number correctly before you run out of attempts?</string>
     <string name="yes">YES</string>
     <string name="no">NO</string>
-    <string name="instruct">Enter a number between 1 and 100:</string>
+    <string name="instruct">Enter the number between 1 and 100:</string>
     <string name="userInput">Number goes here</string>
     <string name="guess">GUESS!</string>
     <string name="instruct1">Click GUESS after you enter your number</string>
