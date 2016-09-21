@@ -46,7 +46,12 @@ public class GameStartActivity extends AppCompatActivity {
                                 generateNewGame();
                             }
                         })
-                        .setNegativeButton("No", null)
+                        .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                finish();
+                                System.exit(0);
+                            }
+                        })
                         .show();
             }
 
@@ -68,7 +73,7 @@ public class GameStartActivity extends AppCompatActivity {
     //Alert Dialogue
     public void askToPlayAgain() {
         new AlertDialog.Builder(GameStartActivity.this)
-                .setMessage("Sorry, out of attempts! Do you want to try again?")
+                .setMessage("Sorry, out of attempts! The number was: " + randomNumber + " Do you want to try again?")
                 .setCancelable(false)
                 .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
@@ -93,6 +98,7 @@ public class GameStartActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
         setContentView(R.layout.activity_game_start);
 
         guessButton = (Button) findViewById(R.id.guess_button);
