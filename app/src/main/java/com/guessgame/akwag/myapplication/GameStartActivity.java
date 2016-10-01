@@ -18,7 +18,7 @@ public class GameStartActivity extends AppCompatActivity {
 
     private int randomNumber;
 
-    private int attemptsLeft = 6;
+    private int attemptsLeft = 7;
 
     public void checkTheUserInput() {
         String usersNumber = userIn.getText().toString();
@@ -38,7 +38,7 @@ public class GameStartActivity extends AppCompatActivity {
 
             } else if (theNumber == randomNumber) {
                 new AlertDialog.Builder(GameStartActivity.this)
-                        .setMessage("WINNER! " + theNumber + " is correct. Do you want to play again?")
+                        .setMessage("CONGRATULATIONS! " + theNumber + " is correct. Do you want to play again?")
                         .setCancelable(false)
                         .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
@@ -60,7 +60,7 @@ public class GameStartActivity extends AppCompatActivity {
             }
 
         } catch (Exception e) {
-            message = "Enter a real number please.";
+            message = "Please, enter a real number!";
             output.setText(message);
 
         } finally {
@@ -73,8 +73,7 @@ public class GameStartActivity extends AppCompatActivity {
     //Alert Dialogue
     public void askToPlayAgain() {
         new AlertDialog.Builder(GameStartActivity.this)
-                .setMessage("Sorry, out of attempts! The number was: " + randomNumber + " Do you want to try again?")
-                .setCancelable(false)
+                .setMessage("Sorry, you're out of attempts! The number was: " + randomNumber + "." + " Do you want to try again?")
                 .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         userIn.setText("");
@@ -92,7 +91,7 @@ public class GameStartActivity extends AppCompatActivity {
 
     private void generateNewGame() {
         randomNumber = (int) (Math.random() * 100 + 1);
-        attemptsLeft = 6;
+        attemptsLeft = 7;
     }
 
     @Override
