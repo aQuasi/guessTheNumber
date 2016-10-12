@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
         /*
         New activity is started to play game when the "YES" button is clicked
-         */
+
         Button yesButton = (Button) findViewById(R.id.button_yes);
         yesButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -35,7 +35,17 @@ public class MainActivity extends AppCompatActivity {
                 Intent gameStartActivity = new Intent(MainActivity.this, GameStartActivity.class);
                 startActivity(gameStartActivity);
             }
+        });*/
+
+        View yesButton = (View) findViewById(R.id.floatingActionButton);
+        yesButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent gameStartActivity = new Intent(MainActivity.this, GameStartActivity.class);
+                startActivity(gameStartActivity);
+            }
         });
+
     }
 
 }

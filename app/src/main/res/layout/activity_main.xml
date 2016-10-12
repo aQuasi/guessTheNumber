@@ -63,6 +63,21 @@
         android:padding="70dp"
         android:typeface="normal"
         android:textAppearance="?android:textAppearanceMedium"
-        android:textStyle="normal" />
+        android:textStyle="normal"
+        android:id="@+id/textView" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_add_white_24dp"
+        android:background="@android:color/holo_red_light"
+        android:layout_marginTop="12dp"
+        android:id="@+id/floatingActionButton"
+        android:layout_alignTop="@+id/textView"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="11dp"
+        android:layout_marginEnd="11dp"
+        android:onClick=""/>
 
 </RelativeLayout>
