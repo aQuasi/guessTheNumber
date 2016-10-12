@@ -7,30 +7,6 @@
     android:orientation="vertical"
     tools:context="com.guessgame.akwag.myapplication.MainActivity">
 
-    <Button
-        android:id="@+id/button_yes"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:padding="20dp"
-        android:text="@string/yes"
-        android:textSize="16sp"
-        android:textStyle="bold" />
-
-    <Button
-        android:id="@+id/no_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignEnd="@id/button_yes"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignRight="@id/button_yes"
-        android:padding="20dp"
-        android:text="@string/no"
-        android:textSize="16sp"
-        android:textStyle="bold" />
-
     <View
         android:layout_width="match_parent"
         android:layout_height="470dp"
@@ -63,21 +39,19 @@
         android:padding="70dp"
         android:typeface="normal"
         android:textAppearance="?android:textAppearanceMedium"
-        android:textStyle="normal"
+        android:textStyle="bold"
         android:id="@+id/textView" />
 
     <android.support.design.widget.FloatingActionButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_add_white_24dp"
-        android:background="@android:color/holo_red_light"
+        android:src="@drawable/ic_forward_white_24dp"
         android:layout_marginTop="12dp"
         android:id="@+id/floatingActionButton"
         android:layout_alignTop="@+id/textView"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:layout_marginRight="11dp"
-        android:layout_marginEnd="11dp"
-        android:onClick=""/>
+        android:layout_marginEnd="11dp" />
 
 </RelativeLayout>
