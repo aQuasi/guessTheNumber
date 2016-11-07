@@ -17,36 +17,35 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="50dp"
-            android:padding="20dp"
+            android:layout_marginTop="20dp"
             android:text="@string/instruct"
-            android:textAppearance="?android:textAppearanceLarge"
+            android:textAppearance="?android:textAppearanceMedium"
             android:textColor="@android:color/white"
-            android:textStyle="bold"/>
+            />
 
         <EditText
             android:id="@+id/userInput"
             android:layout_width="144dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
             android:ellipsize="end"
             android:ems="10"
             android:gravity="center_horizontal"
             android:hint="@string/userInput"
             android:inputType="number"
             android:maxLines="1"
-            android:padding="20dp"
             android:textColor="@android:color/white"
             android:textColorHint="#FFFFFF"
             android:textSize="18sp"
-            android:textStyle="bold"/>
+            />
 
         <Button
             android:id="@+id/guess_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="30dp"
             android:background="@android:color/darker_gray"
             android:text="@string/guess"
             android:textAppearance="?android:textAppearanceMedium"
@@ -58,12 +57,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="35dp"
-            android:padding="20dp"
+            android:padding="30dp"
             android:text="@string/instruct1"
             android:textAppearance="?android:textAppearanceSmall"
             android:textColor="@android:color/white"
-            android:textStyle="bold"/>
+            />
 
     </LinearLayout>
 </ScrollView>

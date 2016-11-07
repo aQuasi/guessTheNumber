@@ -39,7 +39,6 @@
         android:padding="70dp"
         android:typeface="normal"
         android:textAppearance="?android:textAppearanceMedium"
-        android:textStyle="bold"
         android:id="@+id/textView" />
 
     <android.support.design.widget.FloatingActionButton
