@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent gameStartActivity = new Intent(MainActivity.this, GameStartActivity.class);
                 startActivity(gameStartActivity);
+                overridePendingTransition(R.anim.slide_in, R.anim.slide_out);
             }
         });
 

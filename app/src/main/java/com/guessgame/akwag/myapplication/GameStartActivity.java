@@ -37,7 +37,7 @@ public class GameStartActivity extends AppCompatActivity {
                 output.setText(message);
 
             } else if (theNumber == randomNumber) {
-                new AlertDialog.Builder(GameStartActivity.this)
+                new AlertDialog.Builder(this, AlertDialog.THEME_DEVICE_DEFAULT_LIGHT)
                         .setMessage("CONGRATULATIONS! " + theNumber + " is correct. Do you want to play again?")
                         .setCancelable(false)
                         .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
@@ -72,7 +72,7 @@ public class GameStartActivity extends AppCompatActivity {
 
     //Alert Dialogue
     public void askToPlayAgain() {
-        new AlertDialog.Builder(GameStartActivity.this)
+        new AlertDialog.Builder(this, AlertDialog.THEME_DEVICE_DEFAULT_DARK)
                 .setMessage("Sorry, you're out of attempts! The number was: " + randomNumber + "." + " Do you want to try again?")
                 .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
@@ -83,6 +83,7 @@ public class GameStartActivity extends AppCompatActivity {
                 .setNegativeButton("No", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         finish();
+                        overridePendingTransition(R.anim.slide_out, R.anim.slide_out);
                         System.exit(0);
                     }
                 })
@@ -97,7 +98,7 @@ public class GameStartActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+       //overridePendingTransition(R.anim.slide_out, R.anim.slide_in);
         setContentView(R.layout.activity_game_start);
 
         guessButton = (Button) findViewById(R.id.guess_button);

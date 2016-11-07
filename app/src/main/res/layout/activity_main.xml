@@ -16,41 +16,41 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="140dp"
-        android:text="@string/welcome"
         android:gravity="center_horizontal"
         android:padding="50dp"
-        android:typeface="normal"
+        android:text="@string/welcome"
         android:textSize="40sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:typeface="normal" />
 
     <View
-        android:layout_marginTop="470dp"
         android:layout_width="match_parent"
         android:layout_height="200dp"
+        android:layout_marginTop="470dp"
         android:background="#424242" />
 
     <TextView
+        android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="430dp"
         android:layout_marginBottom="2020dp"
-        android:text="@string/welcome_game_description"
+        android:layout_marginTop="430dp"
         android:gravity="center_horizontal"
         android:padding="70dp"
-        android:typeface="normal"
+        android:text="@string/welcome_game_description"
         android:textAppearance="?android:textAppearanceMedium"
-        android:id="@+id/textView" />
+        android:typeface="normal" />
 
     <android.support.design.widget.FloatingActionButton
+        android:id="@+id/floatingActionButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_arrow_forward_white_24dp"
-        android:layout_marginTop="12dp"
-        android:id="@+id/floatingActionButton"
-        android:layout_alignTop="@+id/textView"
-        android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/textView"
+        android:layout_marginEnd="11dp"
         android:layout_marginRight="11dp"
-        android:layout_marginEnd="11dp" />
+        android:layout_marginTop="12dp"
+        android:src="@drawable/ic_arrow_forward_white_24dp" />
 
 </RelativeLayout>
