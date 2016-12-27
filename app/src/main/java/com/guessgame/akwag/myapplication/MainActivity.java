@@ -5,7 +5,6 @@ import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -19,11 +18,9 @@ public class MainActivity extends AppCompatActivity {
         Typeface customFont = Typeface.createFromAsset(getAssets(),  "fonts/Raleway-Regular.ttf");
         gameDescriptionText.setTypeface(customFont);
 
-
-        TextView outPutMessage = (TextView) findViewById(R.id.welcomeText);
-        Typeface customFontMessage = Typeface.createFromAsset(getAssets(), "font/Raleway-Bold.ttf");
-        outPutMessage.setTypeface(customFontMessage);
-
+        TextView welcomeMessage = (TextView) findViewById(R.id.welcomeText);
+        Typeface customWelcomeFontMessage = Typeface.createFromAsset(getAssets(), "fonts/Raleway-Bold.ttf");
+        welcomeMessage.setTypeface(customWelcomeFontMessage);
 
         /*
         New activity is started to play game when the FAB button is clicked
