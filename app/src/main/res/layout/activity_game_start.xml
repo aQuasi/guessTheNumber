@@ -62,7 +62,7 @@
         android:textColor="#424242"
         android:textColorHint="#424242"
         android:textSize="18sp"
-        android:textStyle="normal|italic"
+        android:textStyle="bold"
         android:layout_above="@+id/guess_button"
         android:layout_centerHorizontal="true" />
 
