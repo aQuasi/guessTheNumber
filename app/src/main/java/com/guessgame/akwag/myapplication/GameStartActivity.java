@@ -15,9 +15,7 @@ public class GameStartActivity extends AppCompatActivity {
     public Button guessButton;
     private EditText userIn;
     private TextView output;
-
     private int randomNumber;
-
     private int attemptsLeft = 7;
 
     public void checkTheUserInput() {
@@ -124,4 +122,5 @@ public class GameStartActivity extends AppCompatActivity {
         });
 
     }
+
 }
