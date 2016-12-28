@@ -18,7 +18,7 @@
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
         android:layout_marginTop="100dp"
-        android:background="@android:color/white" />
+        android:background="#73FFFFFF" />
 
     <Button
         android:id="@+id/guess_button"
