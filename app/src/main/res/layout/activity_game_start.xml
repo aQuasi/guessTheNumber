@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/noblur"
+    android:background="@drawable/light"
     android:orientation="vertical"
     tools:context="com.guessgame.akwag.myapplication.GameStartActivity">
 
@@ -12,17 +12,18 @@
     <View
         android:id="@+id/view"
         android:layout_width="match_parent"
-        android:layout_height="280dp"
+        android:layout_height="273dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
         android:layout_marginTop="100dp"
-        android:background="#73FFFFFF" />
+        android:background="@drawable/viewmod" />
+
 
     <Button
         android:id="@+id/guess_button"
-        android:layout_width="wrap_content"
+        android:layout_width="144dp"
         android:layout_height="wrap_content"
         android:layout_above="@+id/outMessage"
         android:layout_centerHorizontal="true"
@@ -30,7 +31,7 @@
         android:layout_marginTop="15dp"
         android:background="#263238"
         android:text="@string/guess"
-        android:textAppearance="?android:textAppearanceSmall"
+        android:textAppearance="?android:textAppearanceMedium"
         android:textColor="@android:color/white"
         android:textStyle="bold" />
 
@@ -45,14 +46,16 @@
         android:text="@string/instruct"
         android:textAppearance="?android:textAppearanceMedium"
         android:textColor="#424242"
-        android:textStyle="bold" />
+        android:textStyle="normal" />
 
 
     <EditText
         android:id="@+id/userInput"
-        android:layout_marginBottom="0dp"
         android:layout_width="144dp"
         android:layout_height="wrap_content"
+        android:layout_above="@+id/guess_button"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="0dp"
         android:ellipsize="end"
         android:ems="10"
         android:gravity="center_horizontal"
@@ -62,23 +65,21 @@
         android:textColor="#424242"
         android:textColorHint="#424242"
         android:textSize="18sp"
-        android:textStyle="bold"
-        android:layout_above="@+id/guess_button"
-        android:layout_centerHorizontal="true" />
+        android:textStyle="normal" />
 
     <TextView
         android:id="@+id/outMessage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/view"
+        android:layout_centerHorizontal="true"
         android:layout_gravity="center_horizontal"
         android:layout_marginBottom="27dp"
         android:padding="30dp"
         android:text="@string/instruct1"
         android:textAppearance="?android:textAppearanceSmallInverse"
         android:textColor="#424242"
-        android:textStyle="bold"
-        android:typeface="normal"
-        android:layout_alignBottom="@+id/view"
-        android:layout_centerHorizontal="true" />
+        android:textStyle="normal"
+        android:typeface="normal" />
 
 </RelativeLayout>
