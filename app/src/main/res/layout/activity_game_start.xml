@@ -29,7 +29,7 @@
         android:layout_centerHorizontal="true"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="15dp"
-        android:background="#263238"
+        android:background="@drawable/guessbuttonmod"
         android:text="@string/guess"
         android:textAppearance="?android:textAppearanceMedium"
         android:textColor="@android:color/white"

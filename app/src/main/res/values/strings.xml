@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Guess</string>
+    <string name="app_name">Guess The Number</string>
     <string name="welcome">Welcome to the Guessing Game</string>
     <string name="welcome_game_description">A random number has been generated.
         Can you guess the number correctly before you run out of attempts?</string>
