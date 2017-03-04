@@ -53,7 +53,7 @@ public class GameStartActivity extends AppCompatActivity {
                         .setNegativeButton("No", new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
                                 finish();
-                                System.exit(1);
+                                System.exit(0);
                             }
                         })
                         .show();
