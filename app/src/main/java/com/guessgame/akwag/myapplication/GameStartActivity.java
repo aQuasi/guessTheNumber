@@ -17,16 +17,22 @@ public class GameStartActivity extends AppCompatActivity {
     private TextView output;
     private int randomNumber;
     private int attemptsLeft = 7;
+    private String message = "";
 
     public void checkTheUserInput() {
         String usersNumber = userIn.getText().toString();
-        String message;
 
         try {
             int theNumber = Integer.parseInt(usersNumber);
             attemptsLeft--;
 
-            if (theNumber > randomNumber) {
+            if (theNumber < 0 || theNumber > 100) {
+                message = "Sorry, the number can't be above 100. Please try again.";
+                output.setText(message);
+                attemptsLeft++;
+            }
+
+            else if (theNumber > randomNumber) {
                 message = theNumber + " is too high. You have " + attemptsLeft + " attempts left.";
                 output.setText(message);
 
@@ -35,7 +41,7 @@ public class GameStartActivity extends AppCompatActivity {
                 output.setText(message);
 
             } else if (theNumber == randomNumber) {
-                new AlertDialog.Builder(this, AlertDialog.THEME_DEVICE_DEFAULT_LIGHT)
+                new AlertDialog.Builder(this, AlertDialog.THEME_DEVICE_DEFAULT_DARK)
                         .setMessage("CONGRATULATIONS! " + theNumber + " is correct. Do you want to play again?")
                         .setCancelable(false)
                         .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
@@ -47,7 +53,7 @@ public class GameStartActivity extends AppCompatActivity {
                         .setNegativeButton("No", new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
                                 finish();
-                                System.exit(0);
+                                System.exit(1);
                             }
                         })
                         .show();

@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     tools:context="com.guessgame.akwag.myapplication.MainActivity">
 
     <View
         android:layout_width="match_parent"
         android:layout_height="470dp"
-        android:background="@drawable/light"
+        android:background="#1976D2"
          />
 
     <TextView
@@ -23,13 +24,14 @@
         android:text="@string/welcome"
         android:textSize="40sp"
         android:textStyle="bold"
-        android:typeface="normal" />
+        android:typeface="normal"
+        android:textColor="@android:color/white"/>
 
     <View
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:layout_marginTop="470dp"
-        android:background="#69ec407a" />
+        android:background="#FFFFFF" />
 
     <TextView
         android:id="@+id/textView"
@@ -41,9 +43,12 @@
         android:padding="70dp"
         android:text="@string/welcome_game_description"
         android:textAppearance="?android:textAppearanceMedium"
-        android:typeface="normal" />
+        android:typeface="normal"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"/>
 
     <android.support.design.widget.FloatingActionButton
+        app:rippleColor="#F44336"
         android:id="@+id/floatingActionButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -53,6 +58,7 @@
         android:layout_marginEnd="11dp"
         android:layout_marginRight="11dp"
         android:layout_marginTop="12dp"
-        android:src="@drawable/ic_arrow_forward_white_24dp" />
+        android:src="@drawable/ic_arrow_forward_white_24dp"
+        tools:ignore="RelativeOverlap" />
 
 </RelativeLayout>
