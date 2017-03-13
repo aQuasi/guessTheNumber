@@ -53,7 +53,7 @@
         android:background="@color/colorAccent"
         android:text="@string/play"
         android:textAllCaps="true"
-        android:textSize="22sp"
+        android:textSize="24sp"
         android:textStyle="bold" />
 
 </RelativeLayout>
