@@ -1,6 +1,7 @@
 package com.guessgame.akwag.myapplication;
 
 import android.content.DialogInterface;
+import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.KeyEvent;
@@ -13,6 +14,7 @@ import android.app.AlertDialog;
 public class GameStartActivity extends AppCompatActivity {
 
     public Button guessButton;
+    MediaPlayer audioFile;
     private EditText userIn;
     private TextView output;
     private int randomNumber;
@@ -30,9 +32,7 @@ public class GameStartActivity extends AppCompatActivity {
                 message = "Sorry, the number can't be above 100. Please try again.";
                 output.setText(message);
                 attemptsLeft++;
-            }
-
-            else if (theNumber > randomNumber) {
+            } else if (theNumber > randomNumber) {
                 message = theNumber + " is too high. You have " + attemptsLeft + " attempts left.";
                 output.setText(message);
 
@@ -41,6 +41,9 @@ public class GameStartActivity extends AppCompatActivity {
                 output.setText(message);
 
             } else if (theNumber == randomNumber) {
+                audioFile = MediaPlayer.create(GameStartActivity.this, R.raw.congratsound);
+                audioFile.start();
+
                 new AlertDialog.Builder(this, AlertDialog.THEME_DEVICE_DEFAULT_DARK)
                         .setMessage("CONGRATULATIONS! " + theNumber + " is correct. Do you want to play again?")
                         .setCancelable(false)
@@ -59,7 +62,9 @@ public class GameStartActivity extends AppCompatActivity {
                         .show();
             }
 
-            if (attemptsLeft <= 0) {
+            if (attemptsLeft < 1) {
+                audioFile = MediaPlayer.create(GameStartActivity.this, R.raw.failedsound);
+                audioFile.start();
                 askToPlayAgain();
             }
 
