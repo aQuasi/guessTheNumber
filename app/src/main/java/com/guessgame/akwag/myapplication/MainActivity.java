@@ -3,12 +3,14 @@ package com.guessgame.akwag.myapplication;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
-import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
+
+    Button playButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,10 +25,10 @@ public class MainActivity extends AppCompatActivity {
         New activity is started to play game when the FAB button is clicked
         */
 
-        View fabButton = findViewById(R.id.floatingActionButton);
-        fabButton.setOnClickListener(new View.OnClickListener() {
+        playButton = (Button) findViewById(R.id.play_button);
+        playButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View view) {
                 Intent gameStartActivity = new Intent(MainActivity.this, GameStartActivity.class);
                 startActivity(gameStartActivity);
                 overridePendingTransition(R.anim.slide_in, R.anim.slide_out);
@@ -34,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
+
     public void onBackPressed() {
         System.gc();
         System.exit(0);

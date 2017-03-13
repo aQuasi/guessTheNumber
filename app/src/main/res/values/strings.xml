@@ -9,4 +9,5 @@
     <string name="userInput">Enter..</string>
     <string name="guess">GUESS!</string>
     <string name="instruct1">Click GUESS after you enter your number</string>
+    <string name="play">Play</string>
 </resources>

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/light"
+    android:background="#263238"
     android:orientation="vertical"
     tools:context="com.guessgame.akwag.myapplication.GameStartActivity">
 
@@ -29,10 +29,10 @@
         android:layout_centerHorizontal="true"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="15dp"
-        android:background="@drawable/guessbuttonmod"
+        android:background="@color/colorAccent"
         android:text="@string/guess"
-        android:textAppearance="?android:textAppearanceMedium"
         android:textColor="@android:color/white"
+        android:textSize="24sp"
         android:textStyle="bold" />
 
     <TextView
@@ -45,7 +45,7 @@
         android:layout_marginTop="12dp"
         android:text="@string/instruct"
         android:textAppearance="?android:textAppearanceMedium"
-        android:textColor="#424242"
+        android:textColor="@android:color/white"
         android:textStyle="bold" />
 
 
@@ -62,8 +62,8 @@
         android:hint="@string/userInput"
         android:inputType="number"
         android:maxLines="1"
-        android:textColor="#424242"
-        android:textColorHint="#424242"
+        android:textColor="@android:color/white"
+        android:textColorHint="@android:color/white"
         android:textSize="18sp"
         android:textStyle="bold" />
 
@@ -78,8 +78,8 @@
         android:padding="30dp"
         android:text="@string/instruct1"
         android:textAppearance="?android:textAppearanceSmallInverse"
-        android:textColor="#424242"
+        android:textColor="@android:color/white"
         android:textStyle="bold"
-        android:typeface="normal"/>
+        android:typeface="normal" />
 
 </RelativeLayout>
