@@ -6,15 +6,21 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.app.AlertDialog;
 
+import static com.guessgame.akwag.myapplication.R.id.guess_button;
+import static com.guessgame.akwag.myapplication.R.id.play_button;
+
 public class GameStartActivity extends AppCompatActivity {
 
     public Button guessButton;
     MediaPlayer audioFile;
+    Button reset;
     private EditText userIn;
     private TextView output;
     private int randomNumber;
@@ -29,7 +35,7 @@ public class GameStartActivity extends AppCompatActivity {
             attemptsLeft--;
 
             if (theNumber < 0 || theNumber > 100) {
-                message = "Sorry, the number can't be above 100. Please try again.";
+                message = "Invalid! Your number is above 100.";
                 output.setText(message);
                 attemptsLeft++;
 
@@ -61,10 +67,14 @@ public class GameStartActivity extends AppCompatActivity {
                             }
                         })
                         .show();
-            } else if (attemptsLeft < 1) {
+            }
+
+            if (attemptsLeft < 1) {
                 audioFile = MediaPlayer.create(GameStartActivity.this, R.raw.failedsound);
                 audioFile.start();
-                askToPlayAgain();
+                //askToPlayAgain();
+                message = "OUT OF ATTEMPTS! " + randomNumber + " was the number. \n Please tap RESET to play again.";
+                output.setText(message);
             }
 
         } catch (Exception e) {
@@ -77,29 +87,6 @@ public class GameStartActivity extends AppCompatActivity {
             userIn.selectAll();
         }
     }
-
-
-    //Alert Dialogue
-    public void askToPlayAgain() {
-
-        new AlertDialog.Builder(this, AlertDialog.THEME_DEVICE_DEFAULT_DARK)
-                .setMessage("Sorry, you're out of attempts! The number was: " + randomNumber + "." + " Do you want to try again?")
-                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-                        userIn.setText("");
-                        generateNewGame();
-                    }
-                })
-                .setNegativeButton("No", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-                        finish();
-                        overridePendingTransition(R.anim.slide_out, R.anim.slide_out);
-                        System.exit(0);
-                    }
-                })
-                .show();
-    }
-
 
     private void generateNewGame() {
         randomNumber = (int) (Math.random() * 100 + 1);
@@ -115,6 +102,7 @@ public class GameStartActivity extends AppCompatActivity {
         guessButton = (Button) findViewById(R.id.guess_button);
         userIn = (EditText) findViewById(R.id.userInput);
         output = (TextView) findViewById(R.id.outMessage);
+        reset = (Button) findViewById(R.id.reset_button);
 
         generateNewGame();
 
@@ -133,6 +121,21 @@ public class GameStartActivity extends AppCompatActivity {
                 return true;
             }
         });
+
+        reset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                generateNewGame();
+                message = "GAME HAS RESET!";
+                userIn.setText("");
+                output.setText(message);
+            }
+        });
+
+        //Guess button pressed animation
+        final Animation buttonPressedAnimation = AnimationUtils.loadAnimation(this, R.anim.buttonpressedeffect);
+        guessButton = (Button) findViewById(guess_button);
+        guessButton.setAnimation(buttonPressedAnimation);
 
     }
 

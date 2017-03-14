@@ -1,4 +1,5 @@
 <resources>
+
     <string name="app_name">Guess!</string>
     <string name="welcome">Welcome to the Guessing Game</string>
     <string name="welcome_game_description">A random number has been generated.
@@ -10,4 +11,6 @@
     <string name="guess">GUESS!</string>
     <string name="instruct1">Click GUESS after you enter your number</string>
     <string name="play">Play</string>
+    <string name="reset">Reset!</string>
+
 </resources>

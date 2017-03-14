@@ -1,12 +1,14 @@
 package com.guessgame.akwag.myapplication;
 
 import android.content.Intent;
-import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
-import android.widget.TextView;
+
+import static com.guessgame.akwag.myapplication.R.id.play_button;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -17,15 +19,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        TextView welcomeMessage = (TextView) findViewById(R.id.welcomeText);
-        Typeface customWelcomeFontMessage = Typeface.createFromAsset(getAssets(), "fonts/Raleway-Bold.ttf");
-        welcomeMessage.setTypeface(customWelcomeFontMessage);
-
         /*
         New activity is started to play game when the FAB button is clicked
         */
-
-        playButton = (Button) findViewById(R.id.play_button);
+        playButton = (Button) findViewById(play_button);
         playButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -34,6 +31,11 @@ public class MainActivity extends AppCompatActivity {
                 overridePendingTransition(R.anim.slide_in, R.anim.slide_out);
             }
         });
+
+        //PLAY button animation
+        final Animation buttonPressedAnimation = AnimationUtils.loadAnimation(this, R.anim.buttonpressedeffect);
+        playButton = (Button) findViewById(play_button);
+        playButton.setAnimation(buttonPressedAnimation);
 
     }
 
