@@ -14,7 +14,6 @@ import android.widget.TextView;
 import android.app.AlertDialog;
 
 import static com.guessgame.akwag.myapplication.R.id.guess_button;
-import static com.guessgame.akwag.myapplication.R.id.play_button;
 
 public class GameStartActivity extends AppCompatActivity {
 
@@ -96,7 +95,6 @@ public class GameStartActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //overridePendingTransition(R.anim.slide_out, R.anim.slide_in);
         setContentView(R.layout.activity_game_start);
 
         guessButton = (Button) findViewById(R.id.guess_button);
