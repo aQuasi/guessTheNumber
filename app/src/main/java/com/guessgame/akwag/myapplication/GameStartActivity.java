@@ -32,6 +32,7 @@ public class GameStartActivity extends AppCompatActivity {
                 message = "Sorry, the number can't be above 100. Please try again.";
                 output.setText(message);
                 attemptsLeft++;
+
             } else if (theNumber > randomNumber) {
                 message = theNumber + " is too high. You have " + attemptsLeft + " attempts left.";
                 output.setText(message);
@@ -60,9 +61,7 @@ public class GameStartActivity extends AppCompatActivity {
                             }
                         })
                         .show();
-            }
-
-            if (attemptsLeft < 1) {
+            } else if (attemptsLeft < 1) {
                 audioFile = MediaPlayer.create(GameStartActivity.this, R.raw.failedsound);
                 audioFile.start();
                 askToPlayAgain();
@@ -79,8 +78,10 @@ public class GameStartActivity extends AppCompatActivity {
         }
     }
 
+
     //Alert Dialogue
     public void askToPlayAgain() {
+
         new AlertDialog.Builder(this, AlertDialog.THEME_DEVICE_DEFAULT_DARK)
                 .setMessage("Sorry, you're out of attempts! The number was: " + randomNumber + "." + " Do you want to try again?")
                 .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
@@ -98,6 +99,7 @@ public class GameStartActivity extends AppCompatActivity {
                 })
                 .show();
     }
+
 
     private void generateNewGame() {
         randomNumber = (int) (Math.random() * 100 + 1);
