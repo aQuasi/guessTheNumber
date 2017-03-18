@@ -97,4 +97,44 @@
         android:textColor="@android:color/white"
         android:textStyle="normal" />
 
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@android:color/holo_orange_light"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme" />
+
+    <TextView
+        android:id="@+id/score_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/view"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/view"
+        android:layout_marginLeft="21dp"
+        android:layout_marginStart="21dp"
+        android:layout_marginTop="14dp"
+        android:text="@string/score"
+        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+        android:textStyle="bold"
+        tools:text="@string/score" />
+
+    <TextView
+        android:id="@+id/score_counter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/score_text"
+        android:layout_alignLeft="@+id/reset_button"
+        android:layout_alignStart="@+id/reset_button"
+        android:layout_marginLeft="13dp"
+        android:layout_marginStart="13dp"
+        android:text="@string/zero"
+        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+        android:textStyle="bold" />
+
+
 </RelativeLayout>

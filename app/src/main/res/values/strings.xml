@@ -2,8 +2,8 @@
 
     <string name="app_name">Guess!</string>
     <string name="welcome">Welcome to the Guessing Game</string>
-    <string name="welcome_game_description">A random number has been generated.
-        Can you guess the number correctly before you run out of attempts?</string>
+    <string name="welcome_game_description">This game generates a secret number. You have to try
+        to guess what the number is. Can you guess the number correctly before you run out of attempts?</string>
     <string name="yes">YES</string>
     <string name="no">NO</string>
     <string name="instruct">Enter the number between 1 and 100:</string>
@@ -12,5 +12,6 @@
     <string name="instruct1">Click GUESS after you enter your number</string>
     <string name="play">Play</string>
     <string name="reset">Reset!</string>
-
+    <string name="score">Score :</string>
+    <string name="zero">0</string>
 </resources>

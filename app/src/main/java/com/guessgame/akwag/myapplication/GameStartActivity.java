@@ -20,11 +20,14 @@ public class GameStartActivity extends AppCompatActivity {
     public Button guessButton;
     MediaPlayer audioFile;
     Button reset;
+    private TextView scoreCounter;
     private EditText userIn;
     private TextView output;
     private int randomNumber;
     private int attemptsLeft = 7;
+    private int numberOfTriesUsed = 0;
     private String message = "";
+    private int userScore = 0;
 
     public void checkTheUserInput() {
         String usersNumber = userIn.getText().toString();
@@ -32,6 +35,7 @@ public class GameStartActivity extends AppCompatActivity {
         try {
             int theNumber = Integer.parseInt(usersNumber);
             attemptsLeft--;
+            numberOfTriesUsed += 1;
 
             if (theNumber < 0 || theNumber > 100) {
                 message = "Invalid! Your number is above 100.";
@@ -49,9 +53,11 @@ public class GameStartActivity extends AppCompatActivity {
             } else if (theNumber == randomNumber) {
                 audioFile = MediaPlayer.create(GameStartActivity.this, R.raw.congratsound);
                 audioFile.start();
+                userScore += userScore + 1;
+                scoreCounter.setText("" + userScore);
 
                 new AlertDialog.Builder(this, AlertDialog.THEME_DEVICE_DEFAULT_DARK)
-                        .setMessage("CONGRATULATIONS! " + theNumber + " is correct. Do you want to play again?")
+                        .setMessage("CONGRATULATIONS! " + theNumber + " is correct. It took you " + numberOfTriesUsed + " tries. Do you want to play again?")
                         .setCancelable(false)
                         .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
@@ -71,7 +77,8 @@ public class GameStartActivity extends AppCompatActivity {
             if (attemptsLeft < 1) {
                 audioFile = MediaPlayer.create(GameStartActivity.this, R.raw.failedsound);
                 audioFile.start();
-                //askToPlayAgain();
+                userScore = 0;
+                scoreCounter.setText("" + userScore);
                 message = "OUT OF ATTEMPTS! " + randomNumber + " was the number. \n Please tap RESET to play again.";
                 output.setText(message);
             }
@@ -90,6 +97,7 @@ public class GameStartActivity extends AppCompatActivity {
     private void generateNewGame() {
         randomNumber = (int) (Math.random() * 100 + 1);
         attemptsLeft = 7;
+        numberOfTriesUsed = 0;
     }
 
     @Override
@@ -101,6 +109,7 @@ public class GameStartActivity extends AppCompatActivity {
         userIn = (EditText) findViewById(R.id.userInput);
         output = (TextView) findViewById(R.id.outMessage);
         reset = (Button) findViewById(R.id.reset_button);
+        scoreCounter = (TextView) findViewById(R.id.score_counter);
 
         generateNewGame();
 
