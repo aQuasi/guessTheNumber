@@ -46,14 +46,13 @@
         android:id="@+id/play_button"
         android:layout_width="130dp"
         android:layout_height="55dp"
-        android:layout_above="@id/textView"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="18dp"
         android:background="#EF5350"
         android:text="@string/play"
         android:textAllCaps="true"
         android:textSize="22sp"
-        android:textStyle="normal" />
+        android:textStyle="normal"
+        android:layout_below="@+id/welcomeText"
+        android:layout_centerHorizontal="true" />
 
     <ImageView
         android:id="@+id/imageButton"
