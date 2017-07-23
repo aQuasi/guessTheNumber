@@ -51,7 +51,7 @@
         android:textAllCaps="true"
         android:textSize="22sp"
         android:textStyle="normal"
-        android:layout_below="@+id/welcomeText"
+        android:layout_above="@+id/textView"
         android:layout_centerHorizontal="true" />
 
     <ImageView
