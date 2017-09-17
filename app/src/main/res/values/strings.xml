@@ -3,7 +3,7 @@
     <string name="app_name">Guess!</string>
     <string name="welcome">Welcome to the Guessing Game</string>
     <string name="welcome_game_description">This game generates a secret number. You have to try
-        to guess what the number is. Can you guess the number correctly before you run out of attempts?</string>
+        to guess that number correctly before you run out of attempts. Tap PLAY to begin.</string>
     <string name="yes">YES</string>
     <string name="no">NO</string>
     <string name="instruct">Enter the number between 1 and 100:</string>
