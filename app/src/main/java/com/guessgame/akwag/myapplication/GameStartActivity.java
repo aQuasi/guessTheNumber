@@ -37,8 +37,8 @@ public class GameStartActivity extends AppCompatActivity {
             attemptsLeft--;
             numberOfTriesUsed += 1;
 
-            if (theNumber < 0 || theNumber > 100) {
-                message = "Invalid! Your number is above 100.";
+            if (theNumber < 0 || theNumber > 50) {
+                message = "Invalid! Your number is above 50.";
                 output.setText(message);
                 attemptsLeft++;
 
@@ -95,7 +95,7 @@ public class GameStartActivity extends AppCompatActivity {
     }
 
     private void generateNewGame() {
-        randomNumber = (int) (Math.random() * 100 + 1);
+        randomNumber = (int) (Math.random() * 50 + 1);
         attemptsLeft = 7;
         numberOfTriesUsed = 0;
     }
