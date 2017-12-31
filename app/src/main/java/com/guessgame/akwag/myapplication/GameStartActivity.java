@@ -53,7 +53,7 @@ public class GameStartActivity extends AppCompatActivity {
             } else if (theNumber == randomNumber) {
                 audioFile = MediaPlayer.create(GameStartActivity.this, R.raw.congratsound);
                 audioFile.start();
-                userScore += userScore + 1;
+                userScore = userScore + 1;
                 scoreCounter.setText("" + userScore);
 
                 new AlertDialog.Builder(this, AlertDialog.THEME_DEVICE_DEFAULT_DARK)
